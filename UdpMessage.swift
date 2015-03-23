@@ -16,6 +16,18 @@ enum UdpMessageType: Int {
     case MeasurementResult
     case DelayMeasurement
     case OffsetMeasurement
+    
+    var description : String {
+        switch self {
+        case .Blip: return "Blip"
+        case .Sync: return "Sync"
+        case .DelayRequest: return "DelayRequest"
+        case .DelayReply: return "DelayReply"
+        case .MeasurementResult: return "MeasurementResult"
+        case .DelayMeasurement: return "DelayMeasurement"
+        case .OffsetMeasurement: return "OffsetMeasurement"
+        }
+    }
 }
 
 class UdpMessage : NSObject, NSCoding

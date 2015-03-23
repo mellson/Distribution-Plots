@@ -25,7 +25,7 @@ class MulticastServer: NSObject, GCDAsyncUdpSocketDelegate {
     
     func setupConnection(){
         multicast_socket = GCDAsyncUdpSocket(delegate: self, delegateQueue: dispatch_get_main_queue())
-//        socket.enableBroadcast(true, error: &error)
+//        multicast_socket.enableBroadcast(true, error: &error)
         multicast_socket.setMaxReceiveIPv4BufferSize(65535)
         multicast_socket.setMaxReceiveIPv6BufferSize(4294967295)
         multicast_socket.bindToPort(SERVER_PORT, error: &error)
