@@ -1,0 +1,1 @@
+plot(density(unlist(read.table("result.txt"))), col="red", lwd=5, xlab="Delay in ms", main="Delay Distribution")
