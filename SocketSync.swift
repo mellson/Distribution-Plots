@@ -12,8 +12,8 @@ class SocketSync: NSObject {
     var inSocket: InSocket!
     var outSocket: OutSocket!
     
-    func startServer() {
-        multicastServer = MulticastServer()
+    func startServer(finishFunction: String -> ()) {
+        multicastServer = MulticastServer(finishFunction: finishFunction)
     }
 
     func startDelayMeasurements(updateTime: String -> (), measurementType: UdpMessageType) {

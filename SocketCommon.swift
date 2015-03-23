@@ -42,12 +42,3 @@ func playTime() -> UInt64 {
     let correctedSecond = second * info.denom / info.numer
     return UInt64(correctedSecond)
 }
-
-func shell(launchPath: String, arguments: [AnyObject])
-{
-    let task = NSTask()
-    task.launchPath = launchPath
-    task.arguments = arguments
-    task.launch()
-    task.waitUntilExit()
-}

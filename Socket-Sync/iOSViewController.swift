@@ -36,9 +36,11 @@ class iOSViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    
+    func finished(s: String) {
+        println("Finished")
+    }
     @IBAction func startServer() {
-        socketSync.startServer()
+        socketSync.startServer(finished)
     }
     
     @IBAction func startClient() {

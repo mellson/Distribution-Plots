@@ -20,6 +20,7 @@ class MacViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         ipTextField.stringValue = SERVER_IP
+        socketSync.startServer(finish)
     }
 
     override var representedObject: AnyObject? {
@@ -33,7 +34,7 @@ class MacViewController: NSViewController {
     }
     
     @IBAction func startServer(sender: NSButton) {
-        socketSync.startServer()
+        socketSync.startServer(finish)
     }
     
     @IBAction func startClient(sender: NSButton) {
@@ -42,6 +43,36 @@ class MacViewController: NSViewController {
     
     @IBAction func startDelayMeasurements(sender: NSButton) {
         socketSync.startClient(setTime, measurementType: UdpMessageType.DelayMeasurement)
+    }
+    
+    func shell(launchPath: String, arguments: [AnyObject])
+    {
+        let task = NSTask()
+        task.launchPath = launchPath
+        task.arguments = arguments
+        task.launch()
+        task.waitUntilExit()
+    }
+    
+    func finish(result: String) {
+        let path = "result.txt"
+        result.writeToFile(path, atomically: true, encoding: NSUTF8StringEncoding, error: nil)
+        let bundle = NSBundle.mainBundle()
+        var scriptPath: String?
+        if MeasurementType == UdpMessageType.DelayMeasurement {
+            scriptPath = bundle.pathForResource("RdelayScript", ofType: "txt")
+        } else {
+            scriptPath = bundle.pathForResource("RoffsetScript", ofType: "txt")
+        }
+        shell("/usr/bin/R", arguments: ["CMD", "BATCH", scriptPath!])
+        
+        // Give the plot a unique file name
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "hhmmss dd-MM-yyyy"
+        let date = dateFormatter.stringFromDate(NSDate())
+        let plotName = "Plot \(date).pdf"
+        shell("/bin/mv", arguments: ["Rplots.pdf", plotName])
+        shell("/usr/bin/open", arguments: [plotName])
     }
 }
 

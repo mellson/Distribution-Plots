@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7525" systemVersion="14D105g" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14D105g" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7516"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--IOS View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="iOSViewController" customModule="Socket_Sync" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="iOSViewController" customModule="Distribution_Plots" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -17,15 +17,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oTC-3u-Zfm">
-                                <rect key="frame" x="16" y="20" width="45" height="30"/>
-                                <state key="normal" title="Server">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="startServer" destination="BYZ-38-t0r" eventType="touchUpInside" id="nbj-nY-PyZ"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H0K-9S-yaO">
                                 <rect key="frame" x="513" y="20" width="71" height="30"/>
                                 <state key="normal" title="Get Offset">
@@ -35,7 +26,7 @@
                                     <action selector="startClient" destination="BYZ-38-t0r" eventType="touchUpInside" id="AZi-Ec-7mc"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7yc-cd-Rxr">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7yc-cd-Rxr">
                                 <rect key="frame" x="16" y="58" width="26" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -43,12 +34,6 @@
                                     <action selector="finishedEditingIP:" destination="BYZ-38-t0r" eventType="editingDidEndOnExit" id="WBP-ox-Ici"/>
                                 </connections>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QBN-If-7b7">
-                                <rect key="frame" x="16" y="8" width="568" height="584"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TK8-nw-QXH">
                                 <rect key="frame" x="513" y="51" width="71" height="30"/>
                                 <state key="normal" title="Get Delay">
@@ -56,30 +41,20 @@
                                 </state>
                                 <connections>
                                     <action selector="startDelayMeasurement" destination="BYZ-38-t0r" eventType="touchUpInside" id="9km-cs-Epf"/>
-                                    <action selector="startDelayMeasurement:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tqf-a7-2JT"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="H0K-9S-yaO" firstAttribute="trailing" secondItem="QBN-If-7b7" secondAttribute="trailing" id="1B1-Dl-TuT"/>
-                            <constraint firstItem="7yc-cd-Rxr" firstAttribute="top" secondItem="oTC-3u-Zfm" secondAttribute="bottom" constant="8" symbolic="YES" id="2Jn-l2-2V2"/>
-                            <constraint firstItem="oTC-3u-Zfm" firstAttribute="leading" secondItem="QBN-If-7b7" secondAttribute="leading" id="3GW-wS-TMs"/>
-                            <constraint firstItem="QBN-If-7b7" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="48s-n3-NEn"/>
-                            <constraint firstItem="QBN-If-7b7" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="83s-sI-4kQ"/>
-                            <constraint firstItem="oTC-3u-Zfm" firstAttribute="baseline" secondItem="H0K-9S-yaO" secondAttribute="baseline" id="N8V-tL-vzf"/>
                             <constraint firstItem="TK8-nw-QXH" firstAttribute="top" secondItem="H0K-9S-yaO" secondAttribute="bottom" constant="1" id="P7N-JA-X6F"/>
+                            <constraint firstItem="TK8-nw-QXH" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="T3e-jF-crC"/>
                             <constraint firstItem="H0K-9S-yaO" firstAttribute="trailing" secondItem="TK8-nw-QXH" secondAttribute="trailing" id="YQK-bc-Wx6"/>
-                            <constraint firstItem="oTC-3u-Zfm" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="ZZP-u5-5yd"/>
-                            <constraint firstItem="oTC-3u-Zfm" firstAttribute="leading" secondItem="7yc-cd-Rxr" secondAttribute="leading" id="aDx-ce-BRB"/>
                             <constraint firstItem="H0K-9S-yaO" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="v0G-lR-7W1"/>
                             <constraint firstItem="H0K-9S-yaO" firstAttribute="leading" secondItem="TK8-nw-QXH" secondAttribute="leading" id="xpa-5I-0UI"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="QBN-If-7b7" secondAttribute="bottom" constant="8" symbolic="YES" id="xv4-MC-xO6"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="ipTextField" destination="7yc-cd-Rxr" id="0sR-8h-6bX"/>
-                        <outlet property="timeLabel" destination="QBN-If-7b7" id="Yvb-2e-JpT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

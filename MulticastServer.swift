@@ -13,10 +13,12 @@ class MulticastServer: NSObject, GCDAsyncUdpSocketDelegate {
     var client_socket:GCDAsyncUdpSocket!
     var error : NSError?
     var timer: NSTimer?
+    let finishFunction: String -> ()
     
     var connectedClients: [String: String] = [:]
     
-    override init(){
+    init(finishFunction: String -> ()){
+        self.finishFunction = finishFunction
         super.init()
         setupConnection()
     }
@@ -75,24 +77,7 @@ class MulticastServer: NSObject, GCDAsyncUdpSocketDelegate {
 //            timer?.invalidate()
             counter = 1
             println("Finished")
-            let path = "result.txt"
-            msg.msg.writeToFile(path, atomically: true, encoding: NSUTF8StringEncoding, error: nil)
-            let bundle = NSBundle.mainBundle()
-            var scriptPath: String?
-            if MeasurementType == UdpMessageType.DelayMeasurement {
-                scriptPath = bundle.pathForResource("RdelayScript", ofType: "txt")
-            } else {
-                scriptPath = bundle.pathForResource("RoffsetScript", ofType: "txt")
-            }
-            shell("/usr/bin/R", ["CMD", "BATCH", scriptPath!])
-            
-            // Give the plot a unique file name
-            let dateFormatter = NSDateFormatter()
-            dateFormatter.dateFormat = "hhmmss dd-MM-yyyy"
-            let date = dateFormatter.stringFromDate(NSDate())
-            let plotName = "Plot \(date).pdf"
-            shell("/bin/mv", ["Rplots.pdf", plotName])
-            shell("/usr/bin/open", [plotName])
+            finishFunction(msg.msg)
         }
     }
 }
