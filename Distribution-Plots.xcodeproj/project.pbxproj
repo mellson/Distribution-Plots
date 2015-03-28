@@ -35,8 +35,6 @@
 		2678FDB21AB9924B00A8A315 /* RdelayScript.txt in Resources */ = {isa = PBXBuildFile; fileRef = 2678FDAF1AB9916C00A8A315 /* RdelayScript.txt */; };
 		2678FDB41AB99A8300A8A315 /* RoffsetScript.txt in Resources */ = {isa = PBXBuildFile; fileRef = 2678FDB31AB99A8300A8A315 /* RoffsetScript.txt */; };
 		2678FDB51AB99A8300A8A315 /* RoffsetScript.txt in Resources */ = {isa = PBXBuildFile; fileRef = 2678FDB31AB99A8300A8A315 /* RoffsetScript.txt */; };
-		26D0B91C1A9516F500AF986A /* BSDSocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D0B91B1A9516F500AF986A /* BSDSocket.swift */; };
-		26D0B91D1A9516F500AF986A /* BSDSocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D0B91B1A9516F500AF986A /* BSDSocket.swift */; };
 		26D8BB2F1A9616EE00720499 /* UdpMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8BB2E1A9616EE00720499 /* UdpMessage.swift */; };
 		26D8BB301A9616EE00720499 /* UdpMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D8BB2E1A9616EE00720499 /* UdpMessage.swift */; };
 		26F12BF41A921EA80019CC1F /* MulticastServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26282D361A9216D600D6FDC8 /* MulticastServer.swift */; };
@@ -93,7 +91,6 @@
 		26282D361A9216D600D6FDC8 /* MulticastServer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MulticastServer.swift; sourceTree = "<group>"; };
 		2678FDAF1AB9916C00A8A315 /* RdelayScript.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = RdelayScript.txt; sourceTree = "<group>"; };
 		2678FDB31AB99A8300A8A315 /* RoffsetScript.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = RoffsetScript.txt; sourceTree = "<group>"; };
-		26D0B91B1A9516F500AF986A /* BSDSocket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BSDSocket.swift; sourceTree = "<group>"; };
 		26D8BB2E1A9616EE00720499 /* UdpMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UdpMessage.swift; sourceTree = "<group>"; };
 		26F12BF51A921EE90019CC1F /* MulticastClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MulticastClient.swift; sourceTree = "<group>"; };
 		40ECF2BB0780E23F2D80EFC1 /* Pods-Socket-Sync.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Socket-Sync.release.xcconfig"; path = "Pods/Target Support Files/Pods-Socket-Sync/Pods-Socket-Sync.release.xcconfig"; sourceTree = "<group>"; };
@@ -240,7 +237,6 @@
 				26F12BF51A921EE90019CC1F /* MulticastClient.swift */,
 				26282D361A9216D600D6FDC8 /* MulticastServer.swift */,
 				260D79F31A852CAD00ABDD6A /* SocketSync.swift */,
-				26D0B91B1A9516F500AF986A /* BSDSocket.swift */,
 				26D8BB2E1A9616EE00720499 /* UdpMessage.swift */,
 				260DDC961AC09771008C087A /* StopWatch.swift */,
 			);
@@ -565,7 +561,6 @@
 				260D79F41A852CAD00ABDD6A /* SocketSync.swift in Sources */,
 				260D79891A852A8000ABDD6A /* AppDelegate.swift in Sources */,
 				260D79EF1A852BB500ABDD6A /* SocketCommon.swift in Sources */,
-				26D0B91C1A9516F500AF986A /* BSDSocket.swift in Sources */,
 				260D79ED1A852BB500ABDD6A /* OutSocket.swift in Sources */,
 				26282D371A9216D600D6FDC8 /* MulticastServer.swift in Sources */,
 				260D79E91A852BB500ABDD6A /* Clicker.swift in Sources */,
@@ -590,7 +585,6 @@
 				260D79EC1A852BB500ABDD6A /* InSocket.swift in Sources */,
 				260D79F51A852CAD00ABDD6A /* SocketSync.swift in Sources */,
 				260D79B11A852AA100ABDD6A /* AppDelegate.swift in Sources */,
-				26D0B91D1A9516F500AF986A /* BSDSocket.swift in Sources */,
 				260D79F01A852BB500ABDD6A /* SocketCommon.swift in Sources */,
 				260D79EE1A852BB500ABDD6A /* OutSocket.swift in Sources */,
 				260D79EA1A852BB500ABDD6A /* Clicker.swift in Sources */,

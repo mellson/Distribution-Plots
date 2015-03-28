@@ -30,7 +30,11 @@ enum UdpMessageType: Int {
     }
 }
 
-class UdpMessage : NSObject, NSCoding
+/** @objc(XRObjectAllocRun) added to make the fully qualified classname of UdpMessage
+ *  be the same across iOS and OS X.
+ *  http://stackoverflow.com/questions/27974959/how-to-change-the-namespace-of-a-swift-class
+**/
+@objc(XRObjectAllocRun) class UdpMessage : NSObject, NSCoding
 {
     let type: UdpMessageType
     let time: Double
