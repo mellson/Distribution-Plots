@@ -1,1 +1,1 @@
-plot(density(unlist(read.table("result.txt"))), col="green", lwd=5, xlab="Offset in ms", main="Offset Distribution")
+plot(density(unlist(read.table("result.txt"))), col="green", lwd=5, xlab="Offset in ms", ylab="% of messages", main="Offset Distribution")

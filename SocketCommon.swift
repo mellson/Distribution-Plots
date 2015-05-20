@@ -19,7 +19,7 @@ let CLIENT_PORT:UInt16 = 7001
 let MULTICAST_PORT:UInt16 = 7002
 
 let MeasurementInterval = 0.1
-let NumberOfMeasurements = 100
+let NumberOfMeasurements = 1000
 var MeasurementType = UdpMessageType.OffsetMeasurement
 
 var s_timebase_info = mach_timebase_info(numer: 0, denom: 0)
